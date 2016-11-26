@@ -1,14 +1,7 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: nikiforov-alexander
-  Date: 11/18/16
-  Time: 7:45 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Welcome</title>
+    <title>Add Passenger</title>
     <link rel="stylesheet" href="resources/css/normalize.css">
     <link rel="stylesheet" href="resources/css/theme.css">
 </head>
