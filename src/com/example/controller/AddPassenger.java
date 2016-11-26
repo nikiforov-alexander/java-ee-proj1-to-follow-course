@@ -19,16 +19,41 @@ public class AddPassenger extends HttpServlet {
         super();
     }
 
+    /**
+     * this method shows "add-passenger" page, with "form"
+     * for user to fill and send using
+     * {@link #doPost(HttpServletRequest, HttpServletResponse)}
+     * @param request : {@literal request} gets {@literal RequestDispatcher}
+     * @param response : used in @{literal forward} method
+     * @throws ServletException : see {@link HttpServlet}
+     * @throws IOException : see {@link HttpServlet}
+     */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         RequestDispatcher view = request.getRequestDispatcher(
                 "WEB-INF/views/add-passenger.jsp"
         );
         view.forward(request, response);
     }
 
+    /**
+     * this method process "add-passenger" POST request,
+     * adds new passenger. For now it does not much do
+     * anything, other than redirects successfully to "/" page,
+     * or back to "add-passenger" page, when input is wrong.
+     * @param request : {@literal request} gets {@literal RequestDispatcher}
+     *                when "forwarded" with error. Also for now following
+     *                lecture, we set "error" attribute to {@literal true},
+     *                and "field error" for each "field" that has error.
+     * @param response : used in @{literal forward} method
+     * @throws ServletException : see {@link HttpServlet}
+     * @throws IOException : see {@link HttpServlet}
+     */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request,
+                          HttpServletResponse response)
+            throws ServletException, IOException {
         // initially set "error" to false, to avoid NullPointer
         request.setAttribute("error", false);
         String firstName = request.getParameter("first-name");
