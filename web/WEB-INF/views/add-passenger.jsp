@@ -17,6 +17,21 @@
 
     <div class="container">
 
+        <%--
+         This is called scriplet. All that is inside, will be
+         invoken, when condition is true
+        --%>
+        <%
+            if (request.getAttribute("error") != null) {
+
+        %>
+            <div>
+                <span>Error</span>
+            </div>
+        <%
+            }
+        %>
+
         <fieldset>
 
             <legend>Passenger Details</legend>
