@@ -1,8 +1,5 @@
 package com.example.controller;
 
-import com.example.model.Gender;
-import org.glassfish.logging.annotation.LogMessagesResourceBundle;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,37 +12,23 @@ import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Servlet implementation class AddPassenger
- */
 @WebServlet("/add-passenger")
 public class AddPassenger extends HttpServlet {
-    private static final long serialVersionUID = 1L;
 
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public AddPassenger() {
         super();
     }
 
-    /**
-     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-     */
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        response.getWriter().append("Served at: ").append(request.getContextPath());
         RequestDispatcher view = request.getRequestDispatcher(
                 "WEB-INF/views/add-passenger.jsp"
         );
-
         view.forward(request, response);
     }
 
-    /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-     */
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        doGet(request, response);
         // initially set "error" to false, to avoid NullPointer
         request.setAttribute("error", false);
         String firstName = request.getParameter("first-name");
