@@ -13,9 +13,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @WebServlet("/add-passenger")
-public class AddPassenger extends HttpServlet {
+public class AddPassengerServlet extends HttpServlet {
 
-    public AddPassenger() {
+    public AddPassengerServlet() {
         super();
     }
 
