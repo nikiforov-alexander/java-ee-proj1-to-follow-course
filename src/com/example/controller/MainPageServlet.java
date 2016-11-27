@@ -8,10 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * Servlet implementation class MainPageServlet
- */
-@WebServlet("/")
+// IMPORTANT : if we use "/" here, our CSS will
+// get lost
+@WebServlet("")
 public class MainPageServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
