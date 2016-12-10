@@ -1,0 +1,38 @@
+= Java EE App to follow Udemy course
+:experimental:
+:source-highlighter: coderay
+:toc:
+:toclevels: 5
+:toc-placement: preamble
+:sectnums:
+:main_package: link:./src/com/example
+:model: {main_package}/model
+:Passenger: {main_package}/model/Passenger.java[Passenger]
+:Gender: {main_package}/model/Gender.java[Gender]
+:AddPassengerServlet: {main_package}/controller/AddPassengerServlet.java[AddPassengerServlet]
+:MainPageServlet: {main_package}/controller/MainPageServlet.java[MainPageServlet]
+:views: link:./web/WEB-INF/views
+:index_jsp: {views}/index.jsp[index.jsp]
+:add_passenger_jsp: {views}/add-passenger.jsp[add-passenger.jsp]
+
+toc::[]
+
+== Description
+
+This is a simple Java EE App to follow
+https://www.udemy.com/the-java-ee-course/learn/v4/overview[Udemy Java EE Basics Course].
+
+For now there is only two `Servlet`-s:
+
+- {AddPassengerServlet}
+- {MainPageServlet}
+
+And two `jsp` files for each `Servlet`:
+
+- {index_jsp}
+- {add_passenger_jsp}
+
+Models can be found in {model}[model] directory:
+
+- {Passenger}
+- {Gender}
