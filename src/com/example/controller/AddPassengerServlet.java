@@ -60,8 +60,8 @@ public class AddPassengerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response)
             throws ServletException, IOException {
-        // initially set "errors" to false, to avoid NullPointerException
-        request.setAttribute("errors", false);
+        // initially set "error" to false, to avoid NullPointerException
+        request.setAttribute("error", false);
 
         // check if first name is right
         String firstName = request.getParameter("first-name");
