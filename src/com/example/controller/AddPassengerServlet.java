@@ -122,6 +122,10 @@ public class AddPassengerServlet extends HttpServlet {
                 ServletContext servletContext = this.getServletContext();
                 servletContext.setAttribute("passengers", passengers);
             }
+            RequestDispatcher view = request.getRequestDispatcher(
+                    "WEB-INF/views/index.jsp"
+            );
+            view.forward(request, response);
         }
     }
 
