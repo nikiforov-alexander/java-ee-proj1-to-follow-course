@@ -49,6 +49,13 @@ public class Passenger {
 
     // overrides
 
+    public Passenger(String firstName, String lastName, Date dateOfBirth, Gender gender) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateOfBirth = dateOfBirth;
+        this.gender = gender;
+    }
+
     @Override
     public String toString() {
         return "Passenger{" +
