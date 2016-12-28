@@ -38,7 +38,8 @@
 
                     <input id="first-name"
                            name="first-name"
-                           type="text">
+                           type="text"
+                           value="<%=request.getAttribute("first-name")%>">
                 </div>
 
                 <div class="inputfield">
