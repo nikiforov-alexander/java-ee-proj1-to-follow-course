@@ -69,6 +69,7 @@ public class AddPassengerServlet extends HttpServlet {
             request.setAttribute("error", true);
             request.setAttribute("first-name error", true);
         }
+        request.setAttribute("first-name", firstName);
 
         // check if last name is right
         String lastName = request.getParameter("last-name");
