@@ -1,14 +1,20 @@
 package com.example.controller;
 
+import com.example.model.Gender;
+import com.example.model.Passenger;
+
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -100,9 +106,19 @@ public class AddPassengerServlet extends HttpServlet {
                     "WEB-INF/views/add-passenger.jsp"
             );
             view.forward(request, response);
-        }
+        } else {
+            // else we add passengers as attribute to
+            // ServletContext with new passenger
+            List<Passenger> passengers = (List<Passenger>) this.getServletContext()
+                    .getAttribute("passengers");
 
-        System.out.println();
+            passengers.add(
+                    new Passenger(firstName, lastName, new Date(), Gender.FEMALE)
+            );
+
+            ServletContext servletContext = this.getServletContext();
+            servletContext.setAttribute("passengers", passengers);
+        }
     }
 
 }
