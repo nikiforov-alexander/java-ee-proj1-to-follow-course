@@ -109,15 +109,19 @@ public class AddPassengerServlet extends HttpServlet {
         } else {
             // else we add passengers as attribute to
             // ServletContext with new passenger
-            List<Passenger> passengers = (List<Passenger>) this.getServletContext()
-                    .getAttribute("passengers");
+            // synchronized is added to make sure List<Passenger>
+            // is not lost for different threads
+            synchronized (this) {
+                List<Passenger> passengers = (List<Passenger>) this.getServletContext()
+                        .getAttribute("passengers");
 
-            passengers.add(
-                    new Passenger(firstName, lastName, new Date(), Gender.FEMALE)
-            );
+                passengers.add(
+                        new Passenger(firstName, lastName, new Date(), Gender.FEMALE)
+                );
 
-            ServletContext servletContext = this.getServletContext();
-            servletContext.setAttribute("passengers", passengers);
+                ServletContext servletContext = this.getServletContext();
+                servletContext.setAttribute("passengers", passengers);
+            }
         }
     }
 
