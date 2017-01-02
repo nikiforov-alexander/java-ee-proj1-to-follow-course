@@ -5,7 +5,7 @@ import javax.ejb.Stateless;
 
 @Stateless
 @LocalBean
-public class FlightService {
+public class FlightServiceImpl {
 
     // properties
 
@@ -50,7 +50,7 @@ public class FlightService {
 
     // constructors
 
-    public FlightService() {
+    public FlightServiceImpl() {
 
     }
 
@@ -58,7 +58,7 @@ public class FlightService {
 
     @Override
     public String toString() {
-        return "FlightService{" +
+        return "FlightServiceImpl{" +
                 "id=" + id +
                 ", from='" + from + '\'' +
                 ", to='" + to + '\'' +
