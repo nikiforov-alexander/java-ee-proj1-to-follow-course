@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import com.example.service.FlightServiceImpl;
+import com.example.service.FlightService;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -14,7 +14,7 @@ public class FlightServlet extends HttpServlet{
     // beans autowire
 
     @EJB
-    private FlightServiceImpl flightServiceImpl;
+    private FlightService flightService;
 
     // constructors
 
