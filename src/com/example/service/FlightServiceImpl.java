@@ -2,7 +2,7 @@ package com.example.service;
 
 import javax.ejb.Stateless;
 
-@Stateless
+@Stateless(name = "FlightServiceImpl")
 public class FlightServiceImpl implements FlightService{
 
     // properties

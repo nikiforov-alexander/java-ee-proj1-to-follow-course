@@ -13,7 +13,7 @@ public class FlightServlet extends HttpServlet{
 
     // beans autowire
 
-    @EJB
+    @EJB(beanName = "FlightServiceImpl")
     private FlightService flightService;
 
     // constructors
